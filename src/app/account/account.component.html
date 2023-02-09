@@ -1,0 +1,98 @@
+<div class="d-flex justify-content-center">
+  <div class="col-9">
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <div data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <i class="fa fa-caret-down mr-2"></i>
+              <b>Transfer Money</b>
+            </div>
+          </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <div class="row mb-3">
+              <div class="col-12">
+                <h5>Your Available Balance : RM {{ userEntity.bankAccountBalance }}</h5>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-6">
+                <label for="sender">Sender</label>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    placeholder="Sender"
+                    name="sender"
+                    [(ngModel)]="userEntity.bankAccountNo"
+                    class="form-control"
+                    disabled
+                  />
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="recipient">Recipient</label>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    placeholder="Recipient"
+                    name="recipient"
+                    [(ngModel)]="entity.recipient"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-6">
+                <label for="amount">Amount to Transfer (RM)</label>
+                <div class="input-group">
+                  <input
+                    type="number"
+                    placeholder="Amount"
+                    name="amount"
+                    [(ngModel)]="entity.value"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="col-6 mt-4">
+                <button class="btn btn-primary float-right" (click)="onTransfer(entity)">
+                  <i class="fas fa-save mr-1"></i>Submit Transaction
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12"><h2>Transaction History</h2></div>
+      <div class="col-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Sender</th>
+              <th>Recipient</th>
+              <th>Amount (RM)</th>
+              <th>Status</th>
+              <th>Date & Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let history of accountHistoryList">
+              <td>{{ history.sender }}</td>
+              <td>{{ history.recipient }}</td>
+              <td>{{ history.value }}</td>
+              <td>{{ history.status }}</td>
+              <td>{{ history.datetime }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

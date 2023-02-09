@@ -1,0 +1,17 @@
+@import "src/theme/theme-variables";
+
+.navbar {
+  margin-bottom: $spacer;
+}
+
+.nav-link.dropdown-toggle {
+  cursor: pointer;
+}
+
+.logo {
+  margin-left: 1em;
+  width: 8em;
+  background-repeat: no-repeat !important;
+  background-position: 50% 90%;
+  background-size: 100%;
+}
