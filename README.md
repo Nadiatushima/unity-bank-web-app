@@ -13,20 +13,10 @@ This project is about bank application which allow user to do basic operations s
 
 #### Test Data
 
-- User 1:
-  Username: Anggun77
-  Password: password
-  Bank Account Number: 9010299122
-
-- User 2:
-  Username: Iqbal88
-  Password: password
-  Bank Account Number: 6609217892
-
-  | Username | Password |
-  | -------- | -------- |
-  | Anggun77 | password |
-  | Iqbal88  | password |
+| Username | Password | Bank Account No |
+| -------- | -------- | --------------- |
+| Anggun77 | password | 9010299122      |
+| Iqbal88  | password | 6609217892      |
 
 # Getting started
 
