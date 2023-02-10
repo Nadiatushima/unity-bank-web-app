@@ -13,8 +13,7 @@ export class LoginidService {
 
   getResponseId() {
     let s: any = localStorage.getItem('responseId');
-    console.log('asasa', s);
-    this.responseId = JSON.parse(s);
+    this.responseId = s;
     return this.responseId;
   }
 }

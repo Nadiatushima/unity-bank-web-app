@@ -3,6 +3,7 @@ export interface AccountModel {
   recipient?: string;
   sender?: string;
   value?: number;
+  amount?: number;
   status?: string;
   datetime?: string;
 }

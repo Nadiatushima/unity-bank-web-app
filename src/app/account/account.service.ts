@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AccountModel } from './account.model';
 
@@ -8,7 +7,6 @@ import { AccountModel } from './account.model';
 })
 export class AccountService {
   apiKey = 'nadiatushimanordin@gmail.com';
-  id = 'e29d7d0d-1e68-498d-a35a-490a0fb4eae0';
   constructor(private httpClient: HttpClient) {}
 
   public transferMoney(obj: AccountModel) {
@@ -18,6 +16,6 @@ export class AccountService {
 
   public getAllAccountHistory(id: any) {
     let headers = new HttpHeaders({ 'API-KEY': `${this.apiKey}` });
-    return this.httpClient.get<AccountModel>(`/api/transactions/${this.id}`, { headers: headers });
+    return this.httpClient.get<AccountModel>(`/api/transactions/${id}`, { headers: headers });
   }
 }

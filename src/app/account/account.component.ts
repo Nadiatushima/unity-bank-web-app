@@ -6,7 +6,7 @@ import * as moment from 'moment';
 import { LoginidService } from '@app/auth/loginid.service';
 import { UserModel } from '@app/user/user.model';
 import { UserService } from '@app/user/user.service';
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
@@ -47,14 +47,7 @@ export class AccountComponent implements OnInit {
 
   // to transfer money to other
   onTransfer(obj: any) {
-    if (
-      !obj.amount ||
-      obj.amount.toString().trim() === '' ||
-      !obj.sender ||
-      obj.sender.trim() === '' ||
-      !obj.recipient ||
-      obj.recipient.trim() === ''
-    ) {
+    if (!obj.amount || obj.amount.toString().trim() === '' || !obj.recipient || obj.recipient.trim() === '') {
       swal.fire({
         icon: 'error',
         title: 'Error',
@@ -63,8 +56,8 @@ export class AccountComponent implements OnInit {
       });
       return;
     }
-
-    if (obj.amount > this.userEntity ? this.userEntity.bankAccountBalance : 0) {
+    let balance: any = this.userEntity ? this.userEntity.bankAccountBalance : 0;
+    if (obj.amount > balance) {
       swal.fire({
         icon: 'error',
         title: 'Error',
@@ -73,10 +66,11 @@ export class AccountComponent implements OnInit {
       });
       return;
     }
+    obj.sender = this.userEntity.bankAccountNo;
     let request = this.accountService.transferMoney(obj);
     request.subscribe(
       (res: any) => {
-        this.getAccountHistory(obj.id);
+        this.getAccountHistory();
         this.getUserId();
         swal.fire({
           icon: 'success',
@@ -115,8 +109,8 @@ export class AccountComponent implements OnInit {
   }
 
   // to get all transaction
-  getAccountHistory(id?: string) {
-    this.accountService.getAllAccountHistory(id).subscribe((res: any) => {
+  getAccountHistory() {
+    this.accountService.getAllAccountHistory(this.responseId).subscribe((res: any) => {
       console.log(res);
       this.accountHistoryList = res;
       this.accountHistoryList = this.accountHistoryList.sort((a: any, b: any) => {
@@ -140,8 +134,8 @@ export class AccountComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAccountHistory();
     this.responseId = this.loginidService.getResponseId();
+    this.getAccountHistory();
     this.getUserId();
   }
 }
