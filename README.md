@@ -3,6 +3,14 @@
 This project was generated with [ngX-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket/)
 version 11.0.0
 
+#### Demo URL
+
+- [Demo URL](https://unitybankwebapp.web.app/login)
+
+#### Project Description
+
+This project is about bank application which allow user to do basic operations such as view user detail, update user detail, view transaction, view transaction history and transfer money to other bank account. This bank is secure site with login and logout feature.
+
 # Getting started
 
 1. Go to project folder and install dependencies:
@@ -144,15 +152,3 @@ Development, build and quality processes are based on [angular-cli](https://gith
 - [Updating dependencies and tools](docs/updating.md)
 - [Using a backend proxy for development](docs/backend-proxy.md)
 - [Browser routing](docs/routing.md)
-
-#### Project Title
-
-- [Unity Bank Web App]
-
-#### Project Description
-
-- [This project is about bank application which allow user to do basic operations such as view user detail, update user detail, view transaction, view transaction history and transfer money to other bank account. This bank is secure site with login and logout feature.]
-
-#### Demo URL
-
-- [Demo URL](https://unitybankwebapp.web.app/login)
