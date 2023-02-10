@@ -23,6 +23,11 @@ This project is about bank application which allow user to do basic operations s
   Password: password
   Bank Account Number: 6609217892
 
+  | Username | Password |
+  | -------- | -------- |
+  | Anggun77 | password |
+  | Iqbal88  | password |
+
 # Getting started
 
 1. Go to project folder and install dependencies:
