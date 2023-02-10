@@ -11,6 +11,18 @@ version 11.0.0
 
 This project is about bank application which allow user to do basic operations such as view user detail, update user detail, view transaction, view transaction history and transfer money to other bank account. This bank is secure site with login and logout feature.
 
+#### Test Data
+
+- User 1:
+  Username: Anggun77
+  Password: password
+  Bank Account Number: 9010299122
+
+- User 2:
+  Username: Iqbal88
+  Password: password
+  Bank Account Number: 6609217892
+
 # Getting started
 
 1. Go to project folder and install dependencies:
